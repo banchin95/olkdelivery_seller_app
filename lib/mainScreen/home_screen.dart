@@ -51,7 +51,7 @@ class _HomeScreenState extends State<HomeScreen>
       appBar: AppBar(
         flexibleSpace: Container(
           decoration: const BoxDecoration(
-            color: Colors.blueAccent,
+            color: Colors.green,
           ),
         ),
         title: Text(

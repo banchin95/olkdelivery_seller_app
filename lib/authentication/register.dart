@@ -273,18 +273,18 @@ class _RegisterScreenState extends State<RegisterScreen>
                   child: ElevatedButton.icon(
                     label: const Text(
                       "Найти на карте",
-                      style: TextStyle(color: Colors.white),
+                      style: TextStyle(color: Colors.green),
                     ),
                     icon: const Icon(
                       Icons.location_on,
-                      color: Colors.white,
+                      color: Colors.green,
                     ),
                     onPressed: ()
                     {
                       getCurrentLocation();
                     },
                     style: ElevatedButton.styleFrom(
-                      primary: Colors.blueGrey,
+                      primary: Colors.yellow,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(30),
                       ),

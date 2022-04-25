@@ -22,8 +22,8 @@ class SimpleAppBar extends StatelessWidget with PreferredSizeWidget
         decoration: const BoxDecoration(
           gradient: LinearGradient(
               colors: [
-                Colors.blueGrey,
-                Colors.blueAccent,
+                Colors.green,
+                Colors.yellow,
               ],
               begin: FractionalOffset(0.0, 0.0),
               end: FractionalOffset(1.0, 0.0),

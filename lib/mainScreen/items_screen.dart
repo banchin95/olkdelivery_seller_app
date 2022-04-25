@@ -29,7 +29,7 @@ class _ItemsScreenState extends State<ItemsScreen>
       appBar: AppBar(
         flexibleSpace: Container(
           decoration: const BoxDecoration(
-            color: Colors.blueAccent,
+            color: Colors.green,
           ),
         ),
         title: Text(

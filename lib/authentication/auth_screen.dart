@@ -26,13 +26,13 @@ class _AuthScreenState extends State<AuthScreen> {
             text: const TextSpan(
               style: TextStyle(
                 fontSize: 25,
-                fontFamily: "Righteous",
+                fontFamily: "Jost",
                 letterSpacing: 3,
                 fontWeight: FontWeight.bold,
               ),
               children: <TextSpan> [
-                TextSpan(text: "OLK", style: TextStyle(color: Colors.black),),
-                TextSpan(text: "DELIVERY", style: TextStyle(color: Colors.orangeAccent),),
+                TextSpan(text: "Нужные", style: TextStyle(color: Colors.green),),
+                TextSpan(text: " Люди", style: TextStyle(color: Colors.orangeAccent),),
               ],
             ),
           ),
@@ -65,11 +65,11 @@ class _AuthScreenState extends State<AuthScreen> {
         body: Container(
           decoration: const BoxDecoration(
             gradient: LinearGradient(
-              begin: Alignment.bottomCenter,
+              begin: Alignment.bottomRight,
               end: Alignment.topCenter,
               colors: [
-                Colors.blueGrey,
-                Colors.orangeAccent,
+                Colors.green,
+                Colors.yellow,
               ],
             ),
           ),
