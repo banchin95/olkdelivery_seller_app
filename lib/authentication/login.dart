@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:olkdelivery_sellers_app/authentication/auth_screen.dart';
@@ -7,6 +8,7 @@ import 'package:olkdelivery_sellers_app/global/global.dart';
 import 'package:olkdelivery_sellers_app/mainScreen/home_screen.dart';
 import 'package:olkdelivery_sellers_app/widgets/error_dialog.dart';
 import 'package:olkdelivery_sellers_app/widgets/loading_dialog.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../widgets/custom_text_field.dart';
 
@@ -180,6 +182,42 @@ class _LoginScreenState extends State<LoginScreen>
             {
               formValidation();
             },
+          ),
+          const SizedBox(height: 30,),
+          Container(
+            child: RichText(
+              textAlign: TextAlign.center,
+              text: TextSpan(
+                style: TextStyle(
+                  fontSize: 14,
+                ),
+                children: <TextSpan>
+                [
+                  TextSpan(text: "При входе или регистрации вы принимаете условия\n"),
+                  TextSpan(text: "ползовательского соглашения",
+                    style: TextStyle(
+                      color: Colors.blue,
+                    ),
+                    recognizer: TapGestureRecognizer()
+                      ..onTap = ()
+                      {
+                        launch('https://drive.google.com/file/d/1CeZno2d9na2a9NIMWRXFuzAipQBHrsju/view?usp=sharing');
+                      },
+                  ),
+                  TextSpan(text: " и "),
+                  TextSpan(text: "политикой конфиденциальности.",
+                    style: TextStyle(
+                      color: Colors.blue,
+                    ),
+                    recognizer: TapGestureRecognizer()
+                      ..onTap = ()
+                      {
+                        launch('https://drive.google.com/file/d/1CeZno2d9na2a9NIMWRXFuzAipQBHrsju/view?usp=sharing');
+                      },
+                  ),
+                ],
+              ),
+            ),
           ),
           const SizedBox(height: 30,),
         ],

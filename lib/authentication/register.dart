@@ -1,7 +1,7 @@
 import 'dart:io';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
@@ -12,7 +12,7 @@ import 'package:olkdelivery_sellers_app/widgets/error_dialog.dart';
 import 'package:olkdelivery_sellers_app/widgets/loading_dialog.dart';
 import 'package:firebase_storage/firebase_storage.dart' as fStorage;
 import 'package:shared_preferences/shared_preferences.dart';
-
+import 'package:url_launcher/url_launcher.dart';
 import '../global/global.dart';
 
 class RegisterScreen extends StatefulWidget {
@@ -316,8 +316,45 @@ class _RegisterScreenState extends State<RegisterScreen>
             },
           ),
           const SizedBox(height: 30,),
+          Container(
+            child: RichText(
+              textAlign: TextAlign.center,
+              text: TextSpan(
+                style: TextStyle(
+                  fontSize: 14,
+                ),
+                children: <TextSpan>
+                [
+                  TextSpan(text: "При входе или регистрации вы принимаете условия\n"),
+                  TextSpan(text: "ползовательского соглашения",
+                  style: TextStyle(
+                    color: Colors.blue,
+                  ),
+                    recognizer: TapGestureRecognizer()
+                    ..onTap = ()
+                    {
+                      launch('https://drive.google.com/file/d/1CeZno2d9na2a9NIMWRXFuzAipQBHrsju/view?usp=sharing');
+                    },
+                  ),
+                  TextSpan(text: " и "),
+                  TextSpan(text: "политикой конфиденциальности.",
+                    style: TextStyle(
+                      color: Colors.blue,
+                    ),
+                    recognizer: TapGestureRecognizer()
+                      ..onTap = ()
+                      {
+                        launch('https://drive.google.com/file/d/1CeZno2d9na2a9NIMWRXFuzAipQBHrsju/view?usp=sharing');
+                      },
+                  ),
+                ],
+              ),
+            ),
+          ),
+          const SizedBox(height: 30,),
         ],
       ),
     );
   }
 }
+//"При входе или регистрации вы принимаете условия\n ползовательского соглашения и ознакомлены с политикой конфиденциальности.",
